@@ -1,0 +1,11 @@
+Package: MarkowitzUW
+Title: Advanced R Project
+Version: 0.0.1
+Authors@R: person("Kiryl", "Khamutou", email = "k.khamutou@student.uw.edu.pl",
+                  role = c("aut", "cre"))
+Description: The package is a final project for Advanced R subject at University of Warsaw.
+Depends: R (>= 3.5.1)
+License: UW
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
