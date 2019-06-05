@@ -1,9 +1,11 @@
-library(quadprog)
 library(optimx)
 
 
 sharpRation.optimization.GP <- function(returns, riskFreeRate=0) {
 
+  if (is.null(returns)) {
+    stop("The input value cannot be null.")
+  }
   numAssets <- length(returns)
 
   if (numAssets == 1) {
@@ -11,14 +13,17 @@ sharpRation.optimization.GP <- function(returns, riskFreeRate=0) {
   }
 
   meanReturns <- lapply(returns, mean)
-  covMatrix <- cov(returns)
+  covMatrix <- cov(returns, method = "pearson")
 
-  opts <- optimx::optim(rep(1/numAssets, numAssets), portfolio.SharpRation, method = "L-BFGS-B",
-                        control=list(trace=1),
-                        meanReturns=meanReturns, covMatrix=covMatrix, riskFreeRate=riskFreeRate,
-                        lower=rep(0, numAssets), upper=rep(1, numAssets))
+  opts <- optim(rep(1/numAssets, numAssets), portfolio.SharpRation, method = "L-BFGS-B",
+                control=list(trace=1),
+                meanReturn=meanReturns, covMatrix=covMatrix, riskFreeRate=riskFreeRate,
+                lower=rep(0, numAssets), upper=rep(1, numAssets))
 
-  return(opts$par / sum(opts$par))
+  res <- opts$par / sum(opts$par)
+  names(res) <- names(returns)
+
+  return(res)
 }
 
 
