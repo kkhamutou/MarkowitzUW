@@ -4,12 +4,22 @@
 \alias{get.portfolios.random}
 \title{Random set of portfolios of end of day US Stock prices}
 \usage{
-get.portfolios.random(nportfolios, nassets, ...)
+get.portfolios.random(nportfolios, nassets, start_date, end_date,
+  collapse = c("daily", "weekly", "monthly", "quarterly", "annual"),
+  api_key)
 }
 \arguments{
 \item{nportfolios}{An integer, number of portfolios to be generated}
 
-\item{...}{See get.marketData.random}
+\item{nassets}{An integer, number of stock in a portfolio}
+
+\item{start_date}{A Date object, format="YYYY-MM-DD". Retrieve data rows on and after the specified start date.}
+
+\item{end_date}{A Date object, format="YYYY-MM-DD". Retrieve data rows up to and including the specified end date.}
+
+\item{collapse}{Change the sampling frequency of the returned data. Default is none; i.e., data is returned in its original granularity.}
+
+\item{api_key}{A string, authentication toket for a Quandl user.}
 }
 \description{
 Generate N numberb of randomly sampled, unique portfolios

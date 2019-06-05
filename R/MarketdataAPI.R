@@ -48,7 +48,7 @@ get.marketData <- function(code, start_date, end_date,
 
   # setup params for GET request
   params <- list()
-  params$collapse <- match.arg(collapse)
+  params$collapse <- "weekly"
   params$start_date <- as.Date(start_date, format = "%Y-%m-%d")
   params$end_date <- as.Date(end_date, format = "%Y-%m-%d")
   params$api_key <- api_key
@@ -75,11 +75,6 @@ get.marketData <- function(code, start_date, end_date,
       missingCodes <- append(missingCodes, c)
       next
     }
-    # skipNA=TRUE, check if frequency of dataset returned is correct
-    # if (!(length(df[, 2] & skipNA == TRUE) == frequency2integer(params$collapse))) {
-    #   missingCodes <- append(missingCodes, c)
-    #   next
-    # }
 
     # merge data.frames
     if (is.null(tempRes)) {
@@ -228,13 +223,17 @@ get.marketData.random <- function(nassets, start_date, end_date,
 #'
 #' Generate N numberb of randomly sampled, unique portfolios
 #' @param nportfolios An integer, number of portfolios to be generated
-#' @param ... See get.marketData.random
+#' @param nassets An integer, number of stock in a portfolio
+#' @param start_date A Date object, format="YYYY-MM-DD". Retrieve data rows on and after the specified start date.
+#' @param end_date A Date object, format="YYYY-MM-DD". Retrieve data rows up to and including the specified end date.
+#' @param collapse Change the sampling frequency of the returned data. Default is none; i.e., data is returned in its original granularity.
+#' @param api_key A string, authentication toket for a Quandl user.
 #' @export
-get.portfolios.random <- function(nportfolios, nassets, ...) {
+get.portfolios.random <- function(nportfolios, nassets, start_date, end_date,
+                                  collapse=c("daily", "weekly", "monthly", "quarterly", "annual"),
+                                  api_key) {
 
-  # //TODO remvoe
-
-
+  # //TODO remvoe and adjust agruments ...
   start_date <- "2010-12-31"
   end_date <- "2012-12-30"
   collapse <- "weekly"
