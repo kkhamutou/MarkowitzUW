@@ -235,13 +235,17 @@ get.portfolios.random <- function(nportfolios, nassets, ...) {
   # //TODO remvoe
 
 
+  start_date <- "2010-12-31"
+  end_date <- "2012-12-30"
+  collapse <- "weekly"
+
   portfolios <- list()
 
   for (portf in 1:nportfolios) {
     df <- get.marketData.random(nassets, start_date = start_date, end_date = end_date, collapse = collapse, token,
                                 recursive = TRUE)$data
 
-    # if such portfolio already exists - run again random market data
+    # if a portfolio already exists - run again random market data
     if (list(names(df)) %in% lapply(portfolios, names)) {
       portf <- portf - 1
       next

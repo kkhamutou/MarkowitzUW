@@ -1,8 +1,10 @@
 Package: MarkowitzUW
 Title: Advanced R Project
 Version: 0.0.1
-Authors@R: person("Kiryl", "Khamutou", email = "k.khamutou@student.uw.edu.pl",
-                  role = c("aut", "cre"))
+Authors@R: c(person("Piot", "Lato", email = "p.lato@student.uw.edu.pl",
+                  role = "aut"), 
+             person("Kiryl", "Khamutou", email = "k.khamutou@student.uw.edu.pl",
+                  role = "cre")) 
 Description: The package is a final project for Advanced R subject at University of Warsaw.
 Depends: R (>= 3.5.1)
 License: UW

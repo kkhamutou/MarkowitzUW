@@ -103,9 +103,9 @@ strategy.rational <- function(marketData) {
 
 #
 #
-res <- strategy.sharp(3, 5, start_date = start_date, end_date = end_date, collapse = collapse, api_key = token)
+#res <- strategy.sharp(3, 5, start_date = start_date, end_date = end_date, collapse = collapse, api_key = token)
 
-md <- build.test.case(3, 5, start_date = start_date, end_date = end_date, collapse = collapse, api_key = token)
+#md <- build.test.case(3, 5, start_date = start_date, end_date = end_date, collapse = collapse, api_key = token)
 
 # x <- melt(res$res[[1]], id='date', value.name = "Weighted rate of returns")
 #
