@@ -13,6 +13,5 @@ strategy.rational(marketData)
 vector of weights of each stock in a portfolio
 }
 \description{
-The rational investor strategy is based on the following model: a stock with highest average rate of returns receives 50% wegith, second highest is set to 25% weight,
-the rest receives equal share of remaning 25%. Note, than onle possitive rate of returns is concerned.
+The rational investor strategy is based on the following model: a stock with highest average rate of returns receives 50% wegith, second highest is set to 25% weight, the rest receives equal share of remaning 25%. Note, than onle possitive rate of returns is concerned.
 }

@@ -241,7 +241,7 @@ get.portfolios.random <- function(nportfolios, nassets, start_date, end_date,
   portfolios <- list()
 
   for (portf in 1:nportfolios) {
-    df <- get.marketData.random(nassets, start_date = start_date, end_date = end_date, collapse = collapse, token,
+    df <- get.marketData.random(nassets, start_date = start_date, end_date = end_date, collapse = collapse, api_key,
                                 recursive = TRUE)$data
 
     # if a portfolio already exists - run again random market data

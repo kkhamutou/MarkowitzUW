@@ -25,6 +25,5 @@ build.test.case(nportfolios, nassets, start_date, end_date,
 list, training=market training dataset, test=market test dataset, sharp=performance of sharp ratio on test dataset, rational=performance of rational investor on test dataset, random=performance of random investor on test dataset.
 }
 \description{
-A function is used to compare 3 different stretagies: sharp ration, rational invetor and random investor based on training dataset.
-Then, it applies derived weights to test dataset to see the performance of those strategies.
+A function is used to compare 3 different stretagies: sharp ration, rational invetor and random investor based on training dataset.Then, it applies derived weights to test dataset to see the performance of those strategies.
 }

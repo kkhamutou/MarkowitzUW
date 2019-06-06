@@ -7,8 +7,7 @@ source("./R/maxSharpRation.R")
 
 #' Comparison of 3 strategies
 #'
-#' A function is used to compare 3 different stretagies: sharp ration, rational invetor and random investor based on training dataset.
-#' Then, it applies derived weights to test dataset to see the performance of those strategies.
+#' A function is used to compare 3 different stretagies: sharp ration, rational invetor and random investor based on training dataset.Then, it applies derived weights to test dataset to see the performance of those strategies.
 #' @param nportfolios An integer, number of portfolios to be generated
 #' @param nassets An integer, number of stock in a portfolio
 #' @param start_date A Date object, format="YYYY-MM-DD". Retrieve data rows on and after the specified start date.
@@ -77,8 +76,7 @@ strategy.sharp <- function(marketData, riskFreeRate=0) {
 
 #' Rational investor strategy
 #'
-#' The rational investor strategy is based on the following model: a stock with highest average rate of returns receives 50% wegith, second highest is set to 25% weight,
-#' the rest receives equal share of remaning 25%. Note, than onle possitive rate of returns is concerned.
+#' The rational investor strategy is based on the following model: a stock with highest average rate of returns receives 50% wegith, second highest is set to 25% weight, the rest receives equal share of remaning 25%. Note, than onle possitive rate of returns is concerned.
 #' @param marketData data.frame of list of data.frame, marketData is used to calculate weights
 #' @return vector of weights of each stock in a portfolio
 #' @export
@@ -173,6 +171,8 @@ plot.strategies <- function(df) {
   return(list.to.plot)
 
 }
+
+
 
 
 
